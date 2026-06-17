@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.db
+
+# Node
+node_modules/
+dist/
+
+# Env (אסור להעלות לגיטהב!)
+.env
+
+# OS / IDE
+.vscode/
+.DS_Store
+
+# Uploaded images & renders
+uploads/
+backend/uploads/
