@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import api from './api';
 import Auth from './components/Auth';
 import Landing from './components/Landing';
 import MyProjects from './components/MyProjects';
@@ -10,6 +11,9 @@ export default function App() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
+    // מעיר את השרת ברקע ברגע שנכנסים לאתר (Render נרדם אחרי חוסר פעילות)
+    api.get('/').catch(() => {});
+
     const savedUser = localStorage.getItem('username');
     const token = localStorage.getItem('token');
     if (savedUser && token) setUser(savedUser);

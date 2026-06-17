@@ -1,4 +1,4 @@
-# Python
+
 __pycache__/
 *.pyc
 .venv/
@@ -9,13 +9,12 @@ venv/
 node_modules/
 dist/
 
-# Env (אסור להעלות לגיטהב!)
+
 .env
 
-# OS / IDE
 .vscode/
 .DS_Store
 
-# Uploaded images & renders
+
 uploads/
 backend/uploads/
