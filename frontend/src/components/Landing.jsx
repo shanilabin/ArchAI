@@ -1,35 +1,35 @@
 export default function Landing({ onStart }) {
   const features = [
-    { n: '01', color: '#4f46e5', icon: '🔍', tag: 'ArchCheck', title: 'בדיקת שגיאות חכמה', desc: 'ה-AI סורק את השרטוט, מזהה בעיות תכנון (חדר ללא חלון, מרווח חריג, קיר דק) ומסמן אותן על התוכנית — עם הסבר לכל דגל.' },
-    { n: '02', color: '#0ea5e9', icon: '🎨', tag: 'ArchRender', title: 'הדמיות ריאליסטיות', desc: 'בוחרים חומרים, צבעים וסגנון, וה-AI מזהה את החדרים ומפיק הדמיה לכל חלל — מטבח, סלון, חזית — לפי הבחירות שלך.' },
-    { n: '03', color: '#7c3aed', icon: '📊', tag: 'ArchSpecs', title: 'כתב כמויות ואקסל', desc: 'חישוב אוטומטי של חומרים, כמויות ומחירים, עם ייצוא לקובץ Excel מעוצב — מוכן ללקוח או לקבלן.' },
+    { n: '01', color: '#4f46e5', icon: '🔍', tag: 'ArchCheck', title: 'בדיקת שגיאות חכמה', desc: 'ה-AI סורק כל קו בשרטוט ומאתר בעיות שהעין מפספסת — חדר ללא חלון, מעבר צר מדי, קיר דק. הכל מסומן ישר על התוכנית, עם הסבר ברור לכל דגל.' },
+    { n: '02', color: '#0ea5e9', icon: '🎨', tag: 'ArchRender', title: 'הדמיות ריאליסטיות', desc: 'בוחרים חומרים, צבעים וסגנון — וה-AI מזהה כל חלל ומפיק הדמיה מרהיבה: מטבח, סלון, חזית. החזון שבראש, על המסך, תוך דקות.' },
+    { n: '03', color: '#7c3aed', icon: '📊', tag: 'ArchSpecs', title: 'כתב כמויות ואקסל', desc: 'חישוב אוטומטי של חומרים, כמויות ומחירים — מוכן לייצוא לאקסל מעוצב. מסמך מקצועי ללקוח או לקבלן, בלי לגעת במקלדת.' },
   ];
 
   const benefits = [
-    { icon: '⚡', title: 'חוסך שעות עבודה', desc: 'מה שלקח ימים — דקות.' },
-    { icon: '🎯', title: 'פחות טעויות', desc: 'דגלים לבדיקה לפני הביצוע.' },
-    { icon: '💬', title: 'מרשים לקוחות', desc: 'הדמיות שמסבירות את החזון.' },
-    { icon: '📁', title: 'הכל במקום אחד', desc: 'בדיקה, הדמיה ותמחור יחד.' },
+    { icon: '⚡', title: 'חוסך שעות עבודה', desc: 'מה שגזל ימים — נגמר בדקות.' },
+    { icon: '🎯', title: 'פחות טעויות יקרות', desc: 'תופסים בעיות לפני שמגיעים לאתר.' },
+    { icon: '💬', title: 'מרשים כל לקוח', desc: 'הדמיות שמוכרות את החזון בשנייה.' },
+    { icon: '📁', title: 'הכל במקום אחד', desc: 'בדיקה, הדמיה ותמחור — תחת קורת גג אחת.' },
   ];
 
   const steps = [
-    { t: 'מעלים שרטוט', d: 'תמונה של תוכנית, חזית או חדר.' },
-    { t: 'ה-AI עובד', d: 'בודק, מזהה חדרים ומפיק הדמיות.' },
-    { t: 'מורידים תוצאות', d: 'הדמיות + כתב כמויות באקסל.' },
+    { t: 'מעלים שרטוט', d: 'תמונה של תוכנית, חזית או חדר — זה כל מה שצריך.' },
+    { t: 'ה-AI עובד', d: 'בודק שגיאות, מזהה חללים ומפיק הדמיות.' },
+    { t: 'מורידים תוצאות', d: 'הדמיות מוכנות וכתב כמויות באקסל.' },
   ];
 
   const oldWay = [
-    'בדיקת שגיאות ידנית — שעות על גבי שעות',
-    'הדמיות יקרות מסטודיו חיצוני',
-    'כתב כמויות באקסל ידני, מועד לטעויות',
-    'כל משימה בתוכנה נפרדת',
+    'שעות של בדיקת שרטוטים בעיניים עייפות',
+    'הדמיות יקרות שמחכים להן ימים',
+    'כתב כמויות ידני שמלא טעויות',
+    'קפיצות בין חמש תוכנות שונות',
   ];
 
   const newWay = [
-    'בדיקה אוטומטית תוך דקות',
-    'הדמיות AI מיידיות, ללא עלות',
-    'כתב כמויות שנוצר אוטומטית',
-    'הכל בפלטפורמה אחת',
+    'בדיקה אוטומטית, מדויקת, בדקות',
+    'הדמיות מיידיות — ללא עלות',
+    'כתב כמויות שנבנה לבד',
+    'פלטפורמה אחת לכל התהליך',
   ];
 
   const audience = [
@@ -37,15 +37,6 @@ export default function Landing({ onStart }) {
     { icon: '🛋️', title: 'מעצבי פנים', desc: 'הדמיות חללים לפי חומרים, צבעים וסגנון.' },
     { icon: '🎓', title: 'סטודנטים', desc: 'להציג פרויקטים בצורה מקצועית ומרשימה.' },
     { icon: '🔨', title: 'קבלנים', desc: 'כתב כמויות מדויק לתמחור מהיר.' },
-  ];
-
-  const tech = [
-    { icon: '🧠', name: 'Gemini Vision', desc: 'זיהוי וניתוח שרטוטים' },
-    { icon: '⚛️', name: 'React', desc: 'ממשק מהיר ומודרני' },
-    { icon: '🐍', name: 'FastAPI', desc: 'שרת Python יציב' },
-    { icon: '🖼️', name: 'Stable Diffusion', desc: 'מנוע ההדמיות' },
-    { icon: '🔒', name: 'JWT Auth', desc: 'אבטחה והרשאות' },
-    { icon: '📊', name: 'Excel Export', desc: 'ייצוא כתב כמויות' },
   ];
 
   const faq = [
@@ -81,7 +72,7 @@ export default function Landing({ onStart }) {
             </span>
           </h1>
           <p className="text-lg sm:text-xl text-slate-500 mt-7 max-w-2xl mx-auto leading-relaxed">
-            העלי שרטוט אחד — וקבלי בדיקת שגיאות, הדמיות ריאליסטיות וכתב כמויות. כל מה שאדריכל צריך, במקום אחד.
+            העלי שרטוט אחד וקבלי בדיקת שגיאות, הדמיות מרהיבות וכתב כמויות מוכן. כל מה שגזל ימים — עכשיו קורה בדקות, במקום אחד.
           </p>
           <div className="mt-10">
             <button onClick={onStart} style={btnStyle} className={btn}>להתחלת עבודה ←</button>
@@ -111,7 +102,7 @@ export default function Landing({ onStart }) {
         <section className="max-w-4xl mx-auto px-6 pb-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">התהליך הישן מול ArchAI</h2>
-            <p className="text-slate-500 mt-3">אותה עבודה — בשבריר מהזמן.</p>
+            <p className="text-slate-500 mt-3">אותה עבודה — בשבריר מהזמן, בלי הכאב ראש.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
@@ -147,7 +138,7 @@ export default function Landing({ onStart }) {
         <section className="max-w-5xl mx-auto px-6 pb-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">שלושה כלים, תהליך אחד</h2>
-            <p className="text-slate-500 mt-3">מהשרטוט ועד הביצוע.</p>
+            <p className="text-slate-500 mt-3">מהשרטוט הגולמי ועד מסמך מוכן ללקוח.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {features.map((s) => (
@@ -184,7 +175,7 @@ export default function Landing({ onStart }) {
         <section className="max-w-5xl mx-auto px-6 pb-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">למי זה מתאים?</h2>
-            <p className="text-slate-500 mt-3">לכל מי שעובד עם תכנון ועיצוב חללים.</p>
+            <p className="text-slate-500 mt-3">לכל מי שהופך רעיון לחלל.</p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
             {audience.map((a) => (
@@ -201,7 +192,7 @@ export default function Landing({ onStart }) {
         <section className="max-w-4xl mx-auto px-6 pb-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">איך זה עובד?</h2>
-            <p className="text-slate-500 mt-3">שלושה צעדים פשוטים.</p>
+            <p className="text-slate-500 mt-3">שלושה צעדים. בלי עקומת למידה.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {steps.map((s, i) => (
@@ -212,25 +203,6 @@ export default function Landing({ onStart }) {
                 </div>
                 <h4 className="font-semibold tracking-tight mb-1">{s.t}</h4>
                 <p className="text-sm text-slate-500">{s.d}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* הטכנולוגיה מאחורי הקלעים */}
-        <section className="max-w-5xl mx-auto px-6 pb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">הטכנולוגיה מאחורי הקלעים</h2>
-            <p className="text-slate-500 mt-3">בנוי על כלים מתקדמים ואמינים.</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
-            {tech.map((t) => (
-              <div key={t.name} className="flex items-center gap-4 bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
-                <span className="text-3xl">{t.icon}</span>
-                <div>
-                  <div className="font-semibold tracking-tight">{t.name}</div>
-                  <div className="text-sm text-slate-500">{t.desc}</div>
-                </div>
               </div>
             ))}
           </div>
@@ -258,8 +230,8 @@ export default function Landing({ onStart }) {
         <section className="max-w-3xl mx-auto px-6 pb-28">
           <div className="rounded-[2rem] p-12 text-center text-white shadow-xl"
             style={{ background: 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)' }}>
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">מוכנים להתחיל?</h2>
-            <p className="text-indigo-100 mb-8 max-w-md mx-auto">העלי את השרטוט הראשון שלך, ותראי את ה-AI עובד בשבילך.</p>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">מוכנים לראות את זה עובד?</h2>
+            <p className="text-indigo-100 mb-8 max-w-md mx-auto">העלי שרטוט אחד — וגלי כמה זמן הרגע שחררת לעצמך.</p>
             <button onClick={onStart}
               className="px-9 py-4 bg-white text-indigo-700 text-base font-semibold rounded-full hover:scale-105 transition-all duration-200 shadow-lg">
               להתחלת עבודה — חינם

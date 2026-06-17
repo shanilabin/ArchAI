@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#g)"/>
+  <g fill="#ffffff">
+    <!-- גג / פדימנט -->
+    <path d="M32 13 L50 25 L14 25 Z"/>
+    <!-- עמודים -->
+    <rect x="18" y="28" width="4.5" height="16" rx="1"/>
+    <rect x="26.5" y="28" width="4.5" height="16" rx="1"/>
+    <rect x="35" y="28" width="4.5" height="16" rx="1"/>
+    <rect x="43.5" y="28" width="4.5" height="16" rx="1"/>
+    <!-- בסיס -->
+    <rect x="14" y="46" width="36" height="4.5" rx="1.5"/>
+  </g>
+</svg>
