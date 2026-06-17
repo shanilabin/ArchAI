@@ -18,6 +18,44 @@ export default function Landing({ onStart }) {
     { t: 'מורידים תוצאות', d: 'הדמיות + כתב כמויות באקסל.' },
   ];
 
+  const oldWay = [
+    'בדיקת שגיאות ידנית — שעות על גבי שעות',
+    'הדמיות יקרות מסטודיו חיצוני',
+    'כתב כמויות באקסל ידני, מועד לטעויות',
+    'כל משימה בתוכנה נפרדת',
+  ];
+
+  const newWay = [
+    'בדיקה אוטומטית תוך דקות',
+    'הדמיות AI מיידיות, ללא עלות',
+    'כתב כמויות שנוצר אוטומטית',
+    'הכל בפלטפורמה אחת',
+  ];
+
+  const audience = [
+    { icon: '🏛️', title: 'אדריכלים', desc: 'בדיקת תכנון והדמיות מהירות להצגה ללקוח.' },
+    { icon: '🛋️', title: 'מעצבי פנים', desc: 'הדמיות חללים לפי חומרים, צבעים וסגנון.' },
+    { icon: '🎓', title: 'סטודנטים', desc: 'להציג פרויקטים בצורה מקצועית ומרשימה.' },
+    { icon: '🔨', title: 'קבלנים', desc: 'כתב כמויות מדויק לתמחור מהיר.' },
+  ];
+
+  const tech = [
+    { icon: '🧠', name: 'Gemini Vision', desc: 'זיהוי וניתוח שרטוטים' },
+    { icon: '⚛️', name: 'React', desc: 'ממשק מהיר ומודרני' },
+    { icon: '🐍', name: 'FastAPI', desc: 'שרת Python יציב' },
+    { icon: '🖼️', name: 'Stable Diffusion', desc: 'מנוע ההדמיות' },
+    { icon: '🔒', name: 'JWT Auth', desc: 'אבטחה והרשאות' },
+    { icon: '📊', name: 'Excel Export', desc: 'ייצוא כתב כמויות' },
+  ];
+
+  const faq = [
+    { q: 'האם צריך להתקין תוכנה?', a: 'לא. הכל עובד ישירות בדפדפן, מכל מחשב — בלי התקנות.' },
+    { q: 'האם זה חינם?', a: 'כן. אפשר להתחיל בחינם, ללא כרטיס אשראי.' },
+    { q: 'אילו סוגי שרטוטים נתמכים?', a: 'תוכניות (Plan), חזיתות וצילומי חדרים — כתמונה רגילה.' },
+    { q: 'כמה זמן לוקחת בדיקה?', a: 'בדרך כלל דקות ספורות, תלוי במורכבות השרטוט.' },
+    { q: 'מה לגבי פרטיות?', a: 'השרטוטים נשמרים בחשבון האישי שלך בלבד, מאחורי התחברות מאובטחת.' },
+  ];
+
   const btn = "px-9 py-4 text-white text-base font-semibold rounded-full shadow-lg shadow-indigo-500/30 hover:scale-105 hover:shadow-xl transition-all duration-200";
   const btnStyle = { background: 'linear-gradient(135deg, #4f46e5, #7c3aed)' };
 
@@ -69,6 +107,42 @@ export default function Landing({ onStart }) {
           </div>
         </section>
 
+        {/* לפני / אחרי */}
+        <section className="max-w-4xl mx-auto px-6 pb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">התהליך הישן מול ArchAI</h2>
+            <p className="text-slate-500 mt-3">אותה עבודה — בשבריר מהזמן.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
+              <div className="flex items-center gap-2 mb-5">
+                <span className="text-2xl">😮‍💨</span>
+                <h3 className="text-lg font-semibold text-slate-700">בלי ArchAI</h3>
+              </div>
+              <ul className="space-y-3">
+                {oldWay.map((t) => (
+                  <li key={t} className="flex items-start gap-3 text-sm text-slate-500">
+                    <span className="text-red-400 mt-0.5">✕</span>{t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-3xl p-8 text-white shadow-lg" style={{ background: 'linear-gradient(135deg, #4f46e5, #7c3aed)' }}>
+              <div className="flex items-center gap-2 mb-5">
+                <span className="text-2xl">🚀</span>
+                <h3 className="text-lg font-semibold">עם ArchAI</h3>
+              </div>
+              <ul className="space-y-3">
+                {newWay.map((t) => (
+                  <li key={t} className="flex items-start gap-3 text-sm text-indigo-50">
+                    <span className="text-emerald-300 mt-0.5">✓</span>{t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
         {/* 3 היכולות */}
         <section className="max-w-5xl mx-auto px-6 pb-24">
           <div className="text-center mb-12">
@@ -106,6 +180,23 @@ export default function Landing({ onStart }) {
           </div>
         </section>
 
+        {/* למי זה מתאים */}
+        <section className="max-w-5xl mx-auto px-6 pb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">למי זה מתאים?</h2>
+            <p className="text-slate-500 mt-3">לכל מי שעובד עם תכנון ועיצוב חללים.</p>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+            {audience.map((a) => (
+              <div key={a.title} className="bg-white/70 backdrop-blur rounded-3xl p-7 text-center border border-white shadow-sm hover:-translate-y-1 transition-all duration-300">
+                <div className="text-4xl mb-4">{a.icon}</div>
+                <h4 className="font-semibold tracking-tight mb-2">{a.title}</h4>
+                <p className="text-sm text-slate-500 leading-relaxed">{a.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* איך זה עובד */}
         <section className="max-w-4xl mx-auto px-6 pb-24">
           <div className="text-center mb-12">
@@ -122,6 +213,43 @@ export default function Landing({ onStart }) {
                 <h4 className="font-semibold tracking-tight mb-1">{s.t}</h4>
                 <p className="text-sm text-slate-500">{s.d}</p>
               </div>
+            ))}
+          </div>
+        </section>
+
+        {/* הטכנולוגיה מאחורי הקלעים */}
+        <section className="max-w-5xl mx-auto px-6 pb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">הטכנולוגיה מאחורי הקלעים</h2>
+            <p className="text-slate-500 mt-3">בנוי על כלים מתקדמים ואמינים.</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+            {tech.map((t) => (
+              <div key={t.name} className="flex items-center gap-4 bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
+                <span className="text-3xl">{t.icon}</span>
+                <div>
+                  <div className="font-semibold tracking-tight">{t.name}</div>
+                  <div className="text-sm text-slate-500">{t.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* שאלות נפוצות */}
+        <section className="max-w-3xl mx-auto px-6 pb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">שאלות נפוצות</h2>
+          </div>
+          <div className="space-y-4">
+            {faq.map((f) => (
+              <details key={f.q} className="group bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                <summary className="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold tracking-tight list-none">
+                  {f.q}
+                  <span className="text-indigo-500 transition-transform duration-200 group-open:rotate-45 text-xl">+</span>
+                </summary>
+                <p className="px-6 pb-5 text-sm text-slate-500 leading-relaxed">{f.a}</p>
+              </details>
             ))}
           </div>
         </section>
