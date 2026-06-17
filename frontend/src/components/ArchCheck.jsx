@@ -38,6 +38,8 @@ export default function ArchCheck({ project, onContinue }) {
     load();
   }, [project.id]);
 
+  const toggleIssue = (id) => setSelectedId((prev) => (prev === id ? null : id));
+
   const handleFileChange = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -75,6 +77,8 @@ export default function ArchCheck({ project, onContinue }) {
 
   if (loading) return <p className="text-slate-400 text-center py-10">טוען...</p>;
 
+  const selectedIssue = issues.find((it) => it.id === selectedId);
+
   return (
     <div dir="rtl">
       {error && <p className="mb-4 p-3 text-sm text-center text-red-700 bg-red-50 rounded-xl">{error}</p>}
@@ -104,26 +108,59 @@ export default function ArchCheck({ project, onContinue }) {
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* התמונה */}
-            <div className="lg:col-span-2">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+            {/* התמונה + בועות */}
+            <div className="lg:col-span-2 lg:sticky lg:top-24">
               <div className="relative border border-slate-200 rounded-3xl overflow-hidden bg-white shadow-sm">
                 <img src={`${API_URL}${drawingUrl}`} alt="שרטוט" className="block w-full" />
+
+                {/* הנקודות */}
                 {issues.map((issue, i) => {
                   const c = SEVERITY[issue.severity] || SEVERITY.review;
                   const active = selectedId === issue.id;
                   return (
-                    <button key={issue.id} onClick={() => setSelectedId(issue.id)} title={issue.description}
-                      style={{ left: `${issue.x}%`, top: `${issue.y}%`, transform: 'translate(-50%, -50%)', borderColor: c.color, color: c.color, boxShadow: active ? `0 0 0 5px ${c.color}55` : 'none' }}
-                      className="absolute w-8 h-8 rounded-full bg-white/90 border-[3px] font-bold text-sm flex items-center justify-center cursor-pointer hover:scale-110 transition">
+                    <button key={issue.id} onClick={() => toggleIssue(issue.id)} title={issue.description}
+                      style={{
+                        left: `${issue.x}%`, top: `${issue.y}%`,
+                        transform: active ? 'translate(-50%, -50%) scale(1.25)' : 'translate(-50%, -50%)',
+                        borderColor: c.color, color: c.color,
+                        boxShadow: active ? `0 0 0 5px ${c.color}55` : 'none',
+                        zIndex: active ? 30 : 10,
+                      }}
+                      className="absolute w-8 h-8 rounded-full bg-white/90 border-[3px] font-bold text-sm flex items-center justify-center cursor-pointer hover:scale-110 hover:z-20 transition">
                       {i + 1}
                     </button>
                   );
                 })}
+
+                {/* הבועה של הנקודה הנבחרת */}
+                {selectedIssue && (() => {
+                  const c = SEVERITY[selectedIssue.severity] || SEVERITY.review;
+                  const below = selectedIssue.y < 25;
+                  const leftPos = Math.min(82, Math.max(18, selectedIssue.x));
+                  return (
+                    <div className="absolute z-40 w-56 max-w-[75%]"
+                      style={{
+                        left: `${leftPos}%`, top: `${selectedIssue.y}%`,
+                        transform: below ? 'translate(-50%, 18px)' : 'translate(-50%, calc(-100% - 18px))',
+                      }}>
+                      <div className="rounded-2xl bg-white shadow-xl border-2 p-3 text-right" style={{ borderColor: c.color }}>
+                        <div className="flex items-center justify-between gap-2 mb-1">
+                          <span className="text-xs font-bold" style={{ color: c.color }}>
+                            {selectedIssue.id}. {c.label}
+                          </span>
+                          <button onClick={() => setSelectedId(null)}
+                            className="text-slate-400 hover:text-slate-700 text-sm leading-none">✕</button>
+                        </div>
+                        <p className="text-sm text-slate-700 leading-relaxed">{selectedIssue.description}</p>
+                      </div>
+                    </div>
+                  );
+                })()}
               </div>
             </div>
 
-            {/* רשימת ממצאים */}
+            {/* רשימת ממצאים — בלי גלילה פנימית */}
             <div className="lg:col-span-1">
               <h3 className="font-bold text-slate-800 mb-3">
                 {!checked ? 'לחצי "בדוק שגיאות"' : issues.length > 0 ? `${issues.length} נקודות לבדיקה` : 'לא נמצאו בעיות ✓'}
@@ -133,7 +170,7 @@ export default function ArchCheck({ project, onContinue }) {
                   const c = SEVERITY[issue.severity] || SEVERITY.review;
                   const active = selectedId === issue.id;
                   return (
-                    <div key={issue.id} onClick={() => setSelectedId(issue.id)}
+                    <div key={issue.id} onClick={() => toggleIssue(issue.id)}
                       className={'p-3 rounded-2xl border cursor-pointer transition ' + (active ? 'bg-slate-50 border-slate-300 shadow-sm' : 'border-slate-100 bg-white hover:bg-slate-50')}>
                       <div className="flex items-center gap-2 mb-1">
                         <span className="w-5 h-5 rounded-full text-white text-xs flex items-center justify-center font-bold" style={{ background: c.color }}>{i + 1}</span>
