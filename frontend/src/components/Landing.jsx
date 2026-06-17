@@ -98,42 +98,6 @@ export default function Landing({ onStart }) {
           </div>
         </section>
 
-        {/* לפני / אחרי */}
-        <section className="max-w-4xl mx-auto px-6 pb-24">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">התהליך הישן מול ArchAI</h2>
-            <p className="text-slate-500 mt-3">אותה עבודה — בשבריר מהזמן, בלי הכאב ראש.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
-              <div className="flex items-center gap-2 mb-5">
-                <span className="text-2xl">😮‍💨</span>
-                <h3 className="text-lg font-semibold text-slate-700">בלי ArchAI</h3>
-              </div>
-              <ul className="space-y-3">
-                {oldWay.map((t) => (
-                  <li key={t} className="flex items-start gap-3 text-sm text-slate-500">
-                    <span className="text-red-400 mt-0.5">✕</span>{t}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-3xl p-8 text-white shadow-lg" style={{ background: 'linear-gradient(135deg, #4f46e5, #7c3aed)' }}>
-              <div className="flex items-center gap-2 mb-5">
-                <span className="text-2xl">🚀</span>
-                <h3 className="text-lg font-semibold">עם ArchAI</h3>
-              </div>
-              <ul className="space-y-3">
-                {newWay.map((t) => (
-                  <li key={t} className="flex items-start gap-3 text-sm text-indigo-50">
-                    <span className="text-emerald-300 mt-0.5">✓</span>{t}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
         {/* 3 היכולות */}
         <section className="max-w-5xl mx-auto px-6 pb-24">
           <div className="text-center mb-12">
@@ -168,6 +132,42 @@ export default function Landing({ onStart }) {
                 <p className="text-sm text-slate-500">{b.desc}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* לפני / אחרי */}
+        <section className="max-w-4xl mx-auto px-6 pb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">התהליך הישן מול ArchAI</h2>
+            <p className="text-slate-500 mt-3">אותה עבודה — בשבריר מהזמן, בלי הכאב ראש.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
+              <div className="flex items-center gap-2 mb-5">
+                <span className="text-2xl">😮‍💨</span>
+                <h3 className="text-lg font-semibold text-slate-700">בלי ArchAI</h3>
+              </div>
+              <ul className="space-y-3">
+                {oldWay.map((t) => (
+                  <li key={t} className="flex items-start gap-3 text-sm text-slate-500">
+                    <span className="text-red-400 mt-0.5">✕</span>{t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-3xl p-8 text-white shadow-lg" style={{ background: 'linear-gradient(135deg, #4f46e5, #7c3aed)' }}>
+              <div className="flex items-center gap-2 mb-5">
+                <span className="text-2xl">🚀</span>
+                <h3 className="text-lg font-semibold">עם ArchAI</h3>
+              </div>
+              <ul className="space-y-3">
+                {newWay.map((t) => (
+                  <li key={t} className="flex items-start gap-3 text-sm text-indigo-50">
+                    <span className="text-emerald-300 mt-0.5">✓</span>{t}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </section>
 
